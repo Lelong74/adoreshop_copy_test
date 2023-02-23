@@ -1,0 +1,26 @@
+{
+  "name": "adoreshop",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite",
+    "start-particles": "cd ./src/particles && vite",
+    "start-vite": "cd ./src/vite && vite",
+    "start-three-snippet-1": "cd ./src/three-snippet-1 && vite",
+    "start-three-snippet-2": "cd ./src/three-snippet-2 && vite"
+  },
+  "dependencies": {
+    "@types/three": "^0.149.0",
+    "dat.gui": "^0.7.9",
+    "stats.js": "^0.17.0",
+    "three": "^0.149.0"
+  },
+  "devDependencies": {
+    "vite": "^4.1.0"
+  },
+  "author": "A. Lelong t/a DevALops",
+  "license": "ISC"
+}

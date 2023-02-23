@@ -1,0 +1,58 @@
+/* import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* apply styles to the html and body elements */
+html, body {
+  margin: 0; /* remove default margin */
+  height: 100%; /* set height to fill viewport */
+  overflow: hidden; /* hide any overflow beyond viewport */
+  font-family: 'Roboto', sans-serif; /* set font family */
+  color: white; /* set text color to white */
+  font-size: 9px; /* set default font size */
+}
+
+/* create a fixed element for the background animation */
+#magic {
+  position: fixed; /* position fixed for absolute positioning */
+  width: 100%; /* fill entire width of viewport */
+  height: 100vh; /* fill entire height of viewport */
+  display: block; /* set as a block element */
+  top: 0; /* position at top of viewport */
+  left: 0; /* position at left of viewport */
+  z-index: -9999; /* move to the back of the z-axis */
+}
+
+/* create a fixed element for the main content */
+.playground {
+  position: fixed; /* position fixed for absolute positioning */
+  width: 100%; /* fill entire width of viewport */
+  height: 100vh; /* fill entire height of viewport */
+  display: flex; /* display as flex container */
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  flex-direction: column; /* align items in a column */
+}
+
+/* create a class for a large, special text element */
+.special {
+  font-size: 4rem; /* set font size to 4rem */
+  margin: 0; /* remove any default margin */
+}
+
+/* create a class for smaller text elements */
+.minText {
+  font-size: 1rem; /* set font size to 1rem */
+}
+
+/* style anchor tags */
+a {
+  color: white; /* set link color to white */
+  font-size: 1rem; /* set font size to 1rem */
+  text-decoration: none; /* remove default underline */
+}
+
+/* style the logo image */
+.logo {
+  width: 50px; /* set width to 50px */
+  height: 50px; /* set height to 50px */
+}

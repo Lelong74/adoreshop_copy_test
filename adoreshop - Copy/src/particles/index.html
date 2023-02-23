@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href= "style.css">
+    <title>Interactive Particles Text with Three.js</title>
+  </head>
+  <body> 
+    <!-- Vertex Shader -->
+    <script type="x-shader/x-vertex" id="vertexShader">
+      // Define the vertex shader program
+      attribute float size; // particle size attribute
+      attribute vec3 customColor; // particle color attribute
+      varying vec3 vColor; // particle color (to be passed to fragment shader)
+
+      void main() {
+        vColor = customColor;
+        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+        gl_PointSize = size * (300.0 / -mvPosition.z); // particle size calculation
+        gl_Position = projectionMatrix * mvPosition;
+      }
+    </script>
+
+    <!-- Fragment Shader -->
+    <script type="x-shader/x-fragment" id="fragmentShader">
+      // Define the fragment shader program
+      uniform vec3 color; // overall color uniform
+      uniform sampler2D pointTexture; // particle texture uniform
+      varying vec3 vColor; // particle color (from vertex shader)
+
+      void main() {
+        gl_FragColor = vec4(color * vColor, 1.0);
+        gl_FragColor = gl_FragColor * texture2D(pointTexture, gl_PointCoord); // apply particle texture
+      }
+    </script>
+
+    <!-- This div is where the particles will be rendered -->
+    <div id="magic"></div>
+
+    <!-- Three.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+
+    <!-- Import CreateParticles class -->
+    <script type="module">
+      import { CreateParticles } from './createParticles.js';
+      console.log(CreateParticles);
+    </script>
+
+    <!-- Import Environment class-->
+    <script type="module">
+      import { Environment } from './environment.js';
+      console.log(Environment);
+    </script>
+
+    <!-- Import main.js -->
+    <script type="module" src="./main.js"></script>
+
+  </body>
+</html>
